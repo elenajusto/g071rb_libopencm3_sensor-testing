@@ -27,3 +27,26 @@ Repository is based off the libopencm3 template: https://github.com/libopencm3/l
 - Figure out how to use the USART peripheral
 - Enable its operation with libopencm3
 - Send test messages back to host from the microcontroller
+
+## USART Notes
+- The STM32G071RB has access to the following USART peripherals:
+-- USART1 - Full
+-- USART2 - Full
+-- USART3 - Basic
+-- USART4 - BASIC   
+-- LPUART1 - LP
+
+For purposes of this project I will only be using USART1.
+
+- The STM32G071RB USART pins are as follows:
+-- USART_RX
+-- USART_TX
+-- USART_CTS
+-- USART_RTS
+-- USART_DE
+-- USART_CK
+-- USAT_NSS
+
+Since I am only interested in sending basic text messages to the host PC, I will focus only on USART_RX and USART_TX. Where:
+- USART_RX: Input
+- USART_TX: Output
