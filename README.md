@@ -9,7 +9,6 @@ This project uses the libopencm3 framework.
 Repository is based off the libopencm3 template: https://github.com/libopencm3/libopencm3-template.git
 
 # Commands
-
 Flashing program to microcontroller:
 ```sh
 st-flash --reset write <file.bin> 0x8000000
@@ -20,27 +19,40 @@ Checking connected programmers:
 st-info --probe
 ```
 
-# Objective Set 1
-- Interface to the BMI160 via I2C
-- Record data from the BMI160
-- Convert raw data into meaningful quantity
-- Log those quantities and raw data
+# Objectives
+## Objective Set 0
+- Setup development environment outside of STM32CubeIDE [X]
+- Confirm ability to flash programs to microcontroller (blinky) [X]
+- Test logging ability (USART) [-]
+- Test I2C ability (I2C) [-]
 
-# Objective Set 2
-- Interface with an additional sensor via I2C (I have a knockoff MPU6050)
-- Record data from the additional sensor simultaenously (or near simultaenously)
-- Convert the raw data from the additional sensor into meaningful qauntity
-- Log quantity and raw data
+## Objective Set 1
+- Interface to the BMI160 via I2C [-]
+- Record data from the BMI160 [-]
+- Convert raw data into meaningful quantity [-]
+- Log those quantities and raw data [-]
 
-# Objective Set 3
-- Use Kalman Filtering to fuse the quantity values from the two sensors to get an accurate reading
+## Objective Set 2
+- Interface with an additional sensor via I2C (I have a knockoff MPU6050) [-]
+- Record data from the additional sensor simultaenously (or near simultaenously) [-]
+- Convert the raw data from the additional sensor into meaningful qauntity [-]
+- Log quantity and raw data [-]
 
-# project/serial-print
+## Objective Set 3
+- Use Kalman Filtering to fuse the quantity values from the two sensors to get an accurate reading [-]
+
+# Branches
+## project/serial-print
 - Figure out how to use the USART peripheral
 - Enable its operation with libopencm3
 - Send test messages back to host from the microcontroller
 
-## USART Notes
+## project/app-main
+- Reorganise project directory for further development
+- Serve as main branch for further iterations
+
+# Notes
+## USART
 ### Available USART Peripherals
 * USART1 - Full featured
 * USART2 - Full featured
@@ -68,7 +80,6 @@ Note: For basic serial communication, we only need:
 2. Configure GPIO pins for USART
 3. Configure USART parameters (baud rate, data bits, etc.)
 4. Enable USART
-
 
 # Reference
 - Getting started with libopencm3 for STM programming: https://youtu.be/YEGKD6JQJyM?si=YNFPlLzbZi3yefhI
