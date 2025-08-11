@@ -22,3 +22,8 @@ Repository is based off the libopencm3 template: https://github.com/libopencm3/l
 
 # Objective Set 3
 - Use Kalman Filtering to fuse the quantity values from the two sensors to get an accurate reading
+
+# project/serial-print
+- Figure out how to use the USART peripheral
+- Enable its operation with libopencm3
+- Send test messages back to host from the microcontroller
