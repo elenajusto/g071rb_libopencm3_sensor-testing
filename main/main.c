@@ -1,20 +1,22 @@
-
 #include <libopencm3/stm32/gpio.h>
 #include <libopencm3/stm32/rcc.h>
 #include <libopencm3/stm32/usart.h>
 
-
 const char data[] = "Hello world\n";
 
+/* Setup */
 int main(void) {
 
+	// TODO: move to drivers/rcc
 	rcc_periph_clock_enable(RCC_GPIOA);
 	rcc_periph_clock_enable(RCC_USART2);
 
+	// TODO: move to drivers/gpio
 	gpio_mode_setup(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO5); // PA5: LED
 	gpio_mode_setup(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO2);    // PA2: USART2_TX on Nucleo board
 	gpio_set_af(GPIOA, GPIO_AF1, GPIO2);
 
+	// TODO: move to drivers/usart
 	usart_set_baudrate(USART2, 115200);
 	usart_set_mode(USART2, USART_MODE_TX);
 	usart_set_databits(USART2, 8);
@@ -23,6 +25,7 @@ int main(void) {
 	usart_set_flow_control(USART2, USART_FLOWCONTROL_NONE);
 	usart_enable(USART2);
 
+	/* Main Program Loop */
 	while (1) {
 
         // flash LED
