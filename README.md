@@ -65,3 +65,7 @@ Since I am only interested in sending basic text messages to the host PC, I will
 
 ## USART Procedure
 1. Turn USART1 on
+
+
+# Reference
+- Getting started with libopencm3 for STM programming: https://youtu.be/YEGKD6JQJyM?si=YNFPlLzbZi3yefhI
