@@ -23,7 +23,7 @@ st-info --probe
 ## Objective Set 0
 - Setup development environment outside of STM32CubeIDE [X]
 - Confirm ability to flash programs to microcontroller (blinky) [X]
-- Test logging ability (USART) [-]
+- Test logging ability (USART) [X]
 - Test I2C ability (I2C) [-]
 
 ## Objective Set 1
