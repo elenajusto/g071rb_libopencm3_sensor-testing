@@ -41,31 +41,35 @@ st-info --probe
 - Send test messages back to host from the microcontroller
 
 ## USART Notes
-- The STM32G071RB has access to the following USART peripherals:
--- USART1 - Full
--- USART2 - Full
--- USART3 - Basic
--- USART4 - BASIC   
--- LPUART1 - LP
+### Available USART Peripherals
+* USART1 - Full featured
+* USART2 - Full featured
+* USART3 - Basic
+* USART4 - Basic   
+* LPUART1 - Low Power
 
-For purposes of this project I will only be using USART1.
+Note: This project uses USART2 (connected to ST-LINK Virtual COM port)
 
-- The STM32G071RB USART pins are as follows:
--- USART_RX
--- USART_TX
--- USART_CTS
--- USART_RTS
--- USART_DE
--- USART_CK
--- USAT_NSS
+### USART Pin Functions
+* USART_TX - Transmit pin (Output)
+* USART_RX - Receive pin (Input)
+* USART_CTS - Clear To Send
+* USART_RTS - Ready To Send
+* USART_DE - Driver Enable
+* USART_CK - Clock
+* USART_NSS - Slave Select
 
-Since I am only interested in sending basic text messages to the host PC, I will focus only on USART_RX and USART_TX. Where:
-- USART_RX: Input
-- USART_TX: Output
+Note: For basic serial communication, we only need:
+* TX (PA2) - Connected to ST-LINK Virtual COM RX
+* RX (PA3) - Connected to ST-LINK Virtual COM TX
 
-## USART Procedure
-1. Turn USART1 on
+### USART Setup Procedure
+1. Enable USART clock in RCC
+2. Configure GPIO pins for USART
+3. Configure USART parameters (baud rate, data bits, etc.)
+4. Enable USART
 
 
 # Reference
 - Getting started with libopencm3 for STM programming: https://youtu.be/YEGKD6JQJyM?si=YNFPlLzbZi3yefhI
+- Explanation on UART: https://youtu.be/V6m2skVlsQI?si=Plv4Vpjfjrmk72-c
