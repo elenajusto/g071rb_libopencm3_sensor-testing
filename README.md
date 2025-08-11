@@ -8,6 +8,18 @@ This project uses the libopencm3 framework.
 
 Repository is based off the libopencm3 template: https://github.com/libopencm3/libopencm3-template.git
 
+# Commands
+
+Flashing program to microcontroller:
+```sh
+st-flash --reset write <file.bin> 0x8000000
+```
+
+Checking connected programmers:
+```sh
+st-info --probe
+```
+
 # Objective Set 1
 - Interface to the BMI160 via I2C
 - Record data from the BMI160
@@ -50,3 +62,6 @@ For purposes of this project I will only be using USART1.
 Since I am only interested in sending basic text messages to the host PC, I will focus only on USART_RX and USART_TX. Where:
 - USART_RX: Input
 - USART_TX: Output
+
+## USART Procedure
+1. Turn USART1 on
